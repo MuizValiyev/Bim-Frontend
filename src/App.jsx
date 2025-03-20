@@ -24,8 +24,8 @@ function App() {
 
   // Блокируем прокрутку, когда модалка открыта
   useEffect(() => {
-    document.body.style.overflow = isModalOpen || isModalOpenAdaptive ? "hidden" : "auto";
-  }, [isModalOpen || isModalOpenAdaptive]);
+    document.body.style.overflow = isModalOpen ? "hidden" : "auto";
+  }, [isModalOpen]);
 
   return (
     <div className="app">

@@ -181,7 +181,6 @@
   font-size: 20px;
   font-style: normal;
   font-weight: 400;
-  line-height: 56px;
   color: var(--Colors-Neutral-900, #1C1C1C);
 }
 
@@ -238,7 +237,6 @@
 }
 
 .featured-product {
-  position: relative;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -1235,6 +1233,33 @@
     padding: 8px 16px;
     font-size: 14px;
   }
+  .hero-content h3{
+    font-size: 32px;
+  }
+  .hero-content p{
+    font-size: 16px;
+  }
+  .stat-item h2{
+    font-size: 24px;
+  }
+
+  .stat-item p{
+    font-size: 16px;
+    
+  }
+}
+
+@media screen and (max-width:800px) {
+  .hero-image{
+    display: none;
+  }
+  .hero-content{
+    max-width: 100%;
+    text-align: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+  }
 }
 
 /* Адаптация для мобильных устройств */
@@ -1276,8 +1301,9 @@
     background-color: unset;
     box-shadow: unset;
   }
-
-
+  .hero{
+    padding: 100px 0px;
+  }
 
   .header .container {
     background-color: white;
@@ -1294,9 +1320,13 @@
   }
 
 
-  .header .logo img {
+  .header .logo img, .headerModalOpen .logo img {
     width: 101px;
     height: 42px;
+  }
+
+  .hero .container {
+    padding: 0px 11px;
   }
 }
 
