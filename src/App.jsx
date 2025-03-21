@@ -1,9 +1,32 @@
 import React from "react";
 import "./App.css";
-import logo from "./assets/logo.svg";
 import "./index.css";
 import SliderComponent from "./SliderComponent";
 import { useState, useEffect } from "react";
+
+
+
+import logo from "./assets/logo.svg";
+import logoWhite from "./assets/logoWhite.svg";
+import burger from "./assets/burger.svg";
+import books from "./assets/books.svg";
+import teaIcon from "./assets/tea_icon.svg";
+import arrowLeft from "./assets/arrow_left.svg";
+import drink from "./assets/drink.png";
+import arrowRight from "./assets/arrow_right.svg";
+import bimPhoto2 from "./assets/bim_photo_2.png";
+import bimPhoto1 from "./assets/bim_photo_1.png";
+import diploma from  "./assets/diploma.svg";
+import graph from "./assets/graph.svg";
+import rocket from "./assets/rocket.svg";
+import mapContainer from "./assets/map_container.svg";
+import bimFranchises from "./assets/bimfranchises.png";
+import tick from "./assets/tick.svg";
+import bimKepka from "./assets/binkepka.png";
+import bimOneStep from "./assets/bimOneStep.png";
+import telegram from "./assets/telegram.svg";
+import insta from "./assets/insta.svg";
+
 
 function App() {
   const [currentStep, setCurrentStep] = useState(1);
@@ -57,7 +80,7 @@ function App() {
           <div className="burgerandbutton">
             <img
               onClick={openModal}
-              src="/src/assets/burger.svg"
+              src={burger}
               alt="Бургер"
             />
             <button
@@ -102,7 +125,7 @@ function App() {
             </button>
           </div>
           <div className="hero-image">
-            <img src="/src/assets/books.svg" alt="BIM брошюра" />
+            <img src={books} alt="BIM брошюра" />
           </div>
         </div>
       </section>
@@ -140,7 +163,7 @@ function App() {
                   <p>Новые, мощные, взрывные вкусы</p>
                 </div>
                 <div className="menu-icon">
-                  <img src="/src/assets/tea_icon.svg" alt="Tea icon" />
+                  <img src={teaIcon} alt="Tea icon" />
                 </div>
               </div>
               <div className="menu-item">
@@ -149,7 +172,7 @@ function App() {
                   <p>Новые, мощные, взрывные вкусы</p>
                 </div>
                 <div className="menu-icon">
-                  <img src="/src/assets/tea_icon.svg" alt="Tea icon" />
+                  <img src={teaIcon} alt="Tea icon" />
                 </div>
                 <div className="box-menu-item"></div>
               </div>
@@ -160,29 +183,29 @@ function App() {
                   <p>Новые, мощные, взрывные вкусы</p>
                 </div>
                 <div className="menu-icon">
-                  <img src="/src/assets/tea_icon.svg" alt="Tea icon" />
+                  <img src={teaIcon} alt="Tea icon" />
                 </div>
               </div>
             </div>
 
             <div className="featured-product">
               <button className="arrow-button left">
-                <img src="/src/assets/arrow_left.svg" alt="Left arrow" />
+                <img src={arrowLeft} alt="Left arrow" />
               </button>
               <img
-                src="/src/assets/drink.png"
+                src={drink}
                 alt="Напиток"
                 className="drink"
               />
               <button className="arrow-button right">
-                <img src="/src/assets/arrow_right.svg" alt="Right arrow" />
+                <img src={arrowRight} alt="Right arrow" />
               </button>
             </div>
 
             <div className="menu-column right">
               <div className="menu-item">
                 <div className="menu-icon">
-                  <img src="/src/assets/tea_icon.svg" alt="Tea icon" />
+                  <img src={teaIcon} alt="Tea icon" />
                 </div>
                 <div className="menu-text">
                   <h3>БОЛЬШЕ, ЧЕМ ЧАЙ</h3>
@@ -193,7 +216,7 @@ function App() {
               <div className="menu-item">
                 <div className="box-menu-item"></div>
                 <div className="menu-icon">
-                  <img src="/src/assets/tea_icon.svg" alt="Tea icon" />
+                  <img src={teaIcon} alt="Tea icon" />
                 </div>
                 <div className="menu-text">
                   <h3>БОЛЬШЕ, ЧЕМ ЧАЙ</h3>
@@ -202,7 +225,7 @@ function App() {
               </div>
               <div className="menu-item">
                 <div className="menu-icon">
-                  <img src="/src/assets/tea_icon.svg" alt="Tea icon" />
+                  <img src={teaIcon} alt="Tea icon" />
                 </div>
                 <div className="menu-text">
                   <h3>БОЛЬШЕ, ЧЕМ ЧАЙ</h3>
@@ -216,10 +239,10 @@ function App() {
       </section>
       <div className="boxbtnsConcept">
         <button className="arrow-button left">
-          <img src="/src/assets/arrow_left.svg" alt="Left arrow" />
+          <img src={arrowLeft} alt="Left arrow" />
         </button>
         <button className="arrow-button right">
-          <img src="/src/assets/arrow_right.svg" alt="Right arrow" />
+          <img src={arrowRight} alt="Right arrow" />
         </button>
       </div>
 
@@ -228,7 +251,7 @@ function App() {
         <div className="container">
           <div className="content-columns">
             <div className="product-images">
-              <img src="/src/assets/bim_photo_2.png" alt="BIM продукты" />
+              <img src={bimPhoto2} alt="BIM продукты" />
             </div>
             <div className="content-text">
               <h2>BIM - это не только продукт</h2>
@@ -261,7 +284,7 @@ function App() {
               <button className="button secondary-button">Подробнее</button>
             </div>
             <div className="brand-image">
-              <img src="/src/assets/bim_photo_1.png" alt="BIM бренд" />
+              <img src={bimPhoto1} alt="BIM бренд" />
             </div>
           </div>
         </div>
@@ -341,21 +364,21 @@ function App() {
           <div className="support-grid">
             <div className="support-item">
               <div className="support-icon">
-                <img src="/src/assets/diploma.svg" alt="Right arrow" />
+                <img src={diploma} alt="Right arrow" />
               </div>
               <h3>Сертификаты</h3>
               <p>Мы предоставляем все необходимые сертификаты для работы</p>
             </div>
             <div className="support-item">
               <div className="support-icon">
-                <img src="/src/assets/graph.svg" alt="Right arrow" />
+                <img src={graph} alt="Right arrow" />
               </div>
               <h3>Виды поддержки</h3>
               <p>Техническая, маркетинговая, HR и т.д.</p>
             </div>
             <div className="support-item">
               <div className="support-icon">
-                <img src="/src/assets/rocket.svg" alt="Right arrow" />
+                <img src={rocket} alt="Right arrow" />
               </div>
               <h3>Помощь партнерам</h3>
               <p>
@@ -383,7 +406,7 @@ function App() {
             <button className="button primary-button">Оставить заявку</button>
           </div>
           <div className="uzbekistan-map">
-            <img src="/src/assets/map_container.svg" alt="Карта Узбекистана" />
+            <img src={mapContainer} alt="Карта Узбекистана" />
           </div>
         </div>
       </section>
@@ -410,7 +433,7 @@ function App() {
           <h2>Форматы франшизы BIM</h2>
           <div className="franchisesboxrow">
             <img
-              src="/src/assets/bimfranchises.png"
+              src={bimFranchises}
               className="franchises-image"
               alt="Франшизы"
             />
@@ -425,19 +448,19 @@ function App() {
                 взаимодействия.
               </h3>
               <div className="boxonefranchises">
-                <img src="/src/assets/tick.svg" alt="Галочка" />
+                <img src={tick} alt="Галочка" />
                 <p>
                   Плащадь <b>- 775-100кв.м</b>
                 </p>
               </div>
               <div className="boxonefranchises">
-                <img src="/src/assets/tick.svg" alt="Галочка" />
+                <img src={tick} alt="Галочка" />
                 <p>
                   Инвистиции <b>- от 10 000$</b>
                 </p>
               </div>
               <div className="boxonefranchises">
-                <img src="/src/assets/tick.svg" alt="Галочка" />
+                <img src={tick} alt="Галочка" />
                 <p>
                   Сроки открытия <b>- от 45 дней</b>
                 </p>
@@ -459,30 +482,30 @@ function App() {
           </div>
           <div className="boxrowpartnerssteps">
             <div className="boxonefranchises">
-              <img src="/src/assets/tick.svg" alt="Галочка" />
+              <img src={tick} alt="Галочка" />
               <p>Уже имеет опыт удачного ведения бизнеса</p>
             </div>
             <div className="boxonefranchises">
-              <img src="/src/assets/tick.svg" alt="Галочка" />
+              <img src={tick} alt="Галочка" />
               <p>Стремление к инновациям</p>
             </div>
             <div className="boxonefranchises">
-              <img src="/src/assets/tick.svg" alt="Галочка" />
+              <img src={tick} alt="Галочка" />
               <p>Хочет расти и развиваться вместе с нами. </p>
             </div>
             <div className="boxonefranchises">
-              <img src="/src/assets/tick.svg" alt="Галочка" />
+              <img src={tick} alt="Галочка" />
               <p>Креативность и вдохновение</p>
             </div>
             <div className="boxonefranchises">
-              <img src="/src/assets/tick.svg" alt="Галочка" />
+              <img src={tick} alt="Галочка" />
               <p>
                 Согласен пройти обучение и полностью погрузиться в
                 бизнес-процессы.
               </p>
             </div>
             <div className="boxonefranchises">
-              <img src="/src/assets/tick.svg" alt="Галочка" />
+              <img src={tick} alt="Галочка" />
               <p>Общие цели и ценности</p>
             </div>
           </div>
@@ -501,7 +524,7 @@ function App() {
               </p>
               <button className="button primary-button">Оставить заявку</button>
             </div>
-            <img src="/src/assets/binkepka.png" alt="Кепка" />
+            <img src={bimKepka} alt="Кепка" />
           </div>
         </div>
       </section>
@@ -568,7 +591,7 @@ function App() {
                     торговые точки в Ташкенте.
                   </p>
                 </div>
-                <img src="/src/assets/bimOneStep.png" alt="Шаг 1" />
+                <img src={bimOneStep} alt="Шаг 1" />
               </div>
             )}
             {currentStep === 2 && (
@@ -584,7 +607,7 @@ function App() {
                     торговые точки в Ташкенте.
                   </p>
                 </div>
-                <img src="/src/assets/bimOneStep.png" alt="Шаг 1" />
+                <img src={bimOneStep} alt="Шаг 1" />
               </div>
             )}
             {currentStep === 3 && (
@@ -600,7 +623,7 @@ function App() {
                     торговые точки в Ташкенте.
                   </p>
                 </div>
-                <img src="/src/assets/bimOneStep.png" alt="Шаг 1" />
+                <img src={bimOneStep} alt="Шаг 1" />
               </div>
             )}
             {currentStep === 4 && (
@@ -616,7 +639,7 @@ function App() {
                     торговые точки в Ташкенте.
                   </p>
                 </div>
-                <img src="/src/assets/bimOneStep.png" alt="Шаг 1" />
+                <img src={bimOneStep} alt="Шаг 1" />
               </div>
             )}
             {currentStep === 5 && (
@@ -632,7 +655,7 @@ function App() {
                     торговые точки в Ташкенте.
                   </p>
                 </div>
-                <img src="/src/assets/bimOneStep.png" alt="Шаг 1" />
+                <img src={bimOneStep} alt="Шаг 1" />
               </div>
             )}
             {currentStep === 6 && (
@@ -648,7 +671,7 @@ function App() {
                     торговые точки в Ташкенте.
                   </p>
                 </div>
-                <img src="/src/assets/bimOneStep.png" alt="Шаг 1" />
+                <img src={bimOneStep} alt="Шаг 1" />
               </div>
             )}
             {currentStep === 7 && (
@@ -664,7 +687,7 @@ function App() {
                     торговые точки в Ташкенте.
                   </p>
                 </div>
-                <img src="/src/assets/bimOneStep.png" alt="Шаг 1" />
+                <img src={bimOneStep} alt="Шаг 1" />
               </div>
             )}
           </div>
@@ -688,7 +711,7 @@ function App() {
       <footer className="footer">
         <div className="container-Column">
           <div className="boxFooterLogo">
-            <img src="/src/assets/logoWhite.svg" alt="Логотип" />
+            <img src={logoWhite} alt="Логотип" />
           </div>
           <div className="boxcenterfooterinfo">
             <div className="boxfooterinfocolumns">
@@ -706,10 +729,10 @@ function App() {
               <p>+998 99 678 88 78</p>
               <div className="boxsocialnetworks">
                 <a href="">
-                  <img src="/src/assets/telegram.svg" alt="Телеграм" />
+                  <img src={telegram} alt="Телеграм" />
                 </a>
                 <a href="">
-                  <img src="/src/assets/insta.svg" alt="Инстаграм" />
+                  <img src={insta} alt="Инстаграм" />
                 </a>
               </div>
             </div>
