@@ -30,8 +30,71 @@ import insta from "./assets/insta.svg";
 
 function App() {
   const [currentStep, setCurrentStep] = useState(1);
-  const [isModalOpen, setIsModalOpen] = useState(false);
   const [isModalOpenAdaptive, setIsModalOpenAdaptive] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [formData, setFormData] = useState({
+    name: '',
+    phone: '',
+    email: '',
+    city: '',
+    comment: ''
+  });
+  const [isLoading, setIsLoading] = useState(false);
+  const [submitResult, setSubmitResult] = useState(null);
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({
+      ...formData,
+      [name]: value
+    });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setIsLoading(true);
+    
+    try {
+      const response = await fetch('https://crm.bimretail.uz/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(formData)
+      });
+      
+      const result = await response.json();
+      setSubmitResult({
+        success: response.ok,
+        message: response.ok ? 'Сообщение успешно отправлено!' : 'Произошла ошибка при отправке.'
+      });
+      
+      if (response.ok) {
+        // Очистить форму при успешной отправке
+        setFormData({
+          name: '',
+          phone: '',
+          email: '',
+          city: '',
+          comment: ''
+        });
+        
+        // Закрыть модальное окно через 2 секунды после успешной отправки
+        setTimeout(() => {
+          setIsModalOpen(false);
+          setSubmitResult(null);
+        }, 2000);
+      }
+    } catch (error) {
+      console.error('Ошибка при отправке данных:', error);
+      setSubmitResult({
+        success: false,
+        message: 'Произошла ошибка при отправке данных.'
+      });
+    } finally {
+      setIsLoading(false);
+    }
+  };
 
   const handleStep = (step) => {
     setCurrentStep(step);
@@ -748,19 +811,66 @@ function App() {
           <div className="modal" onClick={(e) => e.stopPropagation()}>
             <h2>Связаться с BIM</h2>
             <div className="boxinputs">
-              <input type="name" placeholder="Ф.И.О" />
-              <input type="name" placeholder="Номер" />
-              <input type="name" placeholder="Почта" />
-              <input type="name" placeholder="Город" />
-              <textarea
-                name="format"
-                placeholder="Напишите формат франшизы"
-              ></textarea>
-              <button className="button primary-button">Отправить</button>
+              <form onSubmit={handleSubmit}>
+                <input 
+                  type="text" 
+                  name="name" 
+                  placeholder="Ф.И.О" 
+                  value={formData.name}
+                  onChange={handleChange}
+                  required
+                />
+                <input 
+                  type="tel" 
+                  name="phone" 
+                  placeholder="Номер" 
+                  value={formData.phone}
+                  onChange={handleChange}
+                  required
+                />
+                <input 
+                  type="email" 
+                  name="email" 
+                  placeholder="Почта" 
+                  value={formData.email}
+                  onChange={handleChange}
+                  required
+                />
+                <input 
+                  type="text" 
+                  name="city" 
+                  placeholder="Город" 
+                  value={formData.city}
+                  onChange={handleChange}
+                  required
+                />
+                <textarea
+                  name="comment"
+                  placeholder="Напишите формат франшизы"
+                  value={formData.comment}
+                  onChange={handleChange}
+                  required
+                ></textarea>
+                
+                <button 
+                  className="button primary-button" 
+                  type="submit"
+                  disabled={isLoading}
+                >
+                  {isLoading ? 'Отправка...' : 'Отправить'}
+                </button>
+                
+                {submitResult && (
+                  <div className={`submit-result ${submitResult.success ? 'success' : 'error'}`}>
+                    {submitResult.message}
+                  </div>
+                )}
+              </form>
             </div>
           </div>
         </div>
       )}
+
 
       {/* {isModalOpenAdaptive && (
         <div className="modalOverlay" onClick={() => setIsModalOpenAdaptive(false)}>
