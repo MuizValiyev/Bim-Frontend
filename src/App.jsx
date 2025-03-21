@@ -19,8 +19,8 @@ function App() {
   };
 
   const openModal = () => {
-    setIsModalOpenAdaptive(!isModalOpenAdaptive)
-  }
+    setIsModalOpenAdaptive(!isModalOpenAdaptive);
+  };
 
   // Блокируем прокрутку, когда модалка открыта
   useEffect(() => {
@@ -55,8 +55,15 @@ function App() {
             </ul>
           </nav>
           <div className="burgerandbutton">
-            <img onClick={openModal} src="/src/assets/burger.svg" alt="Бургер" />
-            <button className="button primary-button"onClick={openModalWithImage}>
+            <img
+              onClick={openModal}
+              src="/src/assets/burger.svg"
+              alt="Бургер"
+            />
+            <button
+              className="button primary-button"
+              onClick={openModalWithImage}
+            >
               Связаться с нами
             </button>
           </div>
@@ -64,11 +71,21 @@ function App() {
         {isModalOpenAdaptive && (
           <div className="boxModalAdaptive">
             <div className="boxrowbtns">
-              <a href="#about" className="onebtn">Концепция</a>
-              <a href="#concept" className="onebtn">Цифры</a>
-              <a href="#franchisee" className="onebtn">Поддержка</a>
-              <a href="#bim-not-only" className="onebtn">Как стать партнером</a>
-              <a href="#contacts" className="onebtn">Контакты</a>
+              <a href="#about" className="onebtn">
+                Концепция
+              </a>
+              <a href="#concept" className="onebtn">
+                Цифры
+              </a>
+              <a href="#franchisee" className="onebtn">
+                Поддержка
+              </a>
+              <a href="#bim-not-only" className="onebtn">
+                Как стать партнером
+              </a>
+              <a href="#contacts" className="onebtn">
+                Контакты
+              </a>
             </div>
           </div>
         )}
@@ -114,10 +131,7 @@ function App() {
       <section id="concept" className="concept">
         <div className="container-Column">
           <h2 className="concept-title">Концепция BIM</h2>
-          <div
-            className="concept-content"
-            style={{ backgroundImage: "url('/src/assets/drink.png')" }}
-          >
+          <div className="concept-content">
             <div className="menu-column left">
               <div className="menu-item">
                 <div className="box-menu-item"></div>
@@ -155,6 +169,11 @@ function App() {
               <button className="arrow-button left">
                 <img src="/src/assets/arrow_left.svg" alt="Left arrow" />
               </button>
+              <img
+                src="/src/assets/drink.png"
+                alt="Напиток"
+                className="drink"
+              />
               <button className="arrow-button right">
                 <img src="/src/assets/arrow_right.svg" alt="Right arrow" />
               </button>
@@ -195,6 +214,14 @@ function App() {
           </div>
         </div>
       </section>
+      <div className="boxbtnsConcept">
+        <button className="arrow-button left">
+          <img src="/src/assets/arrow_left.svg" alt="Left arrow" />
+        </button>
+        <button className="arrow-button right">
+          <img src="/src/assets/arrow_right.svg" alt="Right arrow" />
+        </button>
+      </div>
 
       {/* BIM Not Only Section */}
       <section id="bim-not-only" className="bim-not-only">
@@ -382,7 +409,11 @@ function App() {
         <div className="container-Column">
           <h2>Форматы франшизы BIM</h2>
           <div className="franchisesboxrow">
-            <img src="/src/assets/bimfranchises.png" alt="Франшизы" />
+            <img
+              src="/src/assets/bimfranchises.png"
+              className="franchises-image"
+              alt="Франшизы"
+            />
             <div className="boxcolumnfranchises">
               <h3>
                 В Ташкенте создание подобного магазина будет ориентировано на

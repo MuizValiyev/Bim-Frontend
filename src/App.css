@@ -15,6 +15,7 @@
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   position: fixed;
   width: 100%;
+  z-index: 100;
 }
 
 .header-container {
@@ -54,7 +55,8 @@
   color: white;
   border: none;
   border-radius: 20px;
-  padding: 10px 20px;
+  padding: 16px 24px;
+  font-weight: 600;
   font-size: 16px;
   font-style: normal;
   cursor: pointer;
@@ -62,18 +64,6 @@
   width: fit-content;
 }
 
-
-.primary-button {
-  background-color: #CC4422;
-  color: white;
-  border: none;
-  border-radius: 20px;
-  padding: 10px 20px;
-  font-size: 16px;
-  font-style: normal;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
 
 .hero {
   background-image: url('/src/assets/gradient.png');
@@ -161,9 +151,13 @@
 }
 
 
+.stats .container{
+  flex-wrap: wrap;
+  row-gap: 20px; 
+}
+
 .stat-item {
   text-align: center;
-  flex: 1;
 }
 
 .stat-item h2 {
@@ -244,6 +238,14 @@
   height: 533px;
 }
 
+.featured-product .drink {
+  width: 250px; /* Фиксированный размер блока */
+  height: 100%; 
+  object-fit: cover; 
+  object-position: 12%; /* Центрирование картинки */
+  display: block;
+  margin: 0 auto; /* Центрирует, если есть свободное место */
+}
 .product-image {
   max-height: 450px;
 }
@@ -555,7 +557,6 @@
 
 .slider-container {
   width: 100%;
-  max-width: 768px;
   margin: 0 auto;
   margin-bottom: 1.5rem;
   display: flex;
@@ -567,15 +568,30 @@
 .slider-image-wrapper {
   overflow: hidden;
   border-radius: 1rem;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-self: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
 }
 
 .slider-image {
+  max-width: 650px;
+  max-height: 315px;
   width: 100%;
-  height: 24rem;
+  object-fit: cover;
+  background-position: 50%;
+  border-radius: 40px;
 }
 
-.slider-button {
+.uzbekistan-map img{
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.slider-button, .slider-button-adaptive {
   top: 50%;
   transform: translateY(-50%);
   background-color: #60131D;
@@ -590,6 +606,18 @@
 
 }
 
+.slider-button-adaptive{
+  transform: translateY(0%);
+}
+
+
+.slider-button-adaptive-box{
+  display: flex;
+  flex-direction: row;
+  margin-top: 30px;
+  gap: 28px;
+  display: none;
+}
 
 
 .slider-button-left {
@@ -748,7 +776,6 @@
   font-size: 40px;
   font-style: normal;
   font-weight: 500;
-  line-height: 28px;
 }
 
 .franchisesboxrow {
@@ -780,6 +807,7 @@
   display: flex;
   align-items: flex-end;
   gap: 58px;
+  max-width: 600px;
 }
 
 .boxonefranchises p {
@@ -797,7 +825,7 @@
   align-items: center;
   gap: 52px;
   width: 100%;
-  padding: 50px;
+  padding: 50px 0px ;
 }
 
 
@@ -808,7 +836,6 @@
   font-size: 40px;
   font-style: normal;
   font-weight: 500;
-  line-height: 28px;
 }
 
 .boxcolh1 {
@@ -829,18 +856,14 @@
 }
 
 .boxrowpartnerssteps {
-  display: grid;
-  grid-template-columns: auto auto;
-  height: 192px;
-  justify-content: center;
+  display: flex;
   align-items: flex-start;
   gap: 32px 140px;
-  align-self: stretch;
+  flex-wrap: wrap;
 }
 
 .partners {
   width: 100%;
-  height: 416px;
   background-image: url('/src/assets/gradient.png');
   background-color: #60131D;
   background-size: cover;
@@ -868,7 +891,6 @@
 
 .steps {
   width: 100%;
-  padding: 0px 166px;
 }
 
 .steps h2 {
@@ -952,6 +974,13 @@
   flex-direction: row;
   justify-content: space-between;
   width: 1108px;
+}
+
+.FirstStep img{
+  background-position: 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  object-fit: contain;
 }
 
 .boxsteptext {
@@ -1214,12 +1243,63 @@
   line-height: 120%;
 }
 
+.franchises-image{
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+}
+
+.boxbtnsConcept{
+  display: none;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.boxbtnsConcept button{
+  width: 50px;
+  height: 50px;
+}
+
+@media screen and (max-width:1300px) {
+  .franchisesboxrow{
+    flex-direction: column;
+  }
+  .partners{
+    padding: 41px 0px;
+  }
+  .contacts{
+    padding: 53px 0px;
+  }
+  .boxemail{
+    width: unset;
+  }
+}
 
 @media screen and (max-width:1110px) {
 
   .header,
   .headerModalOpen {
     padding: 20px 0px;
+  }
+  .content-text h2{
+    font-size: 24px;
+  }
+  .content-text p{
+    font-size: 16px;
+  }
+
+  .stepsline{
+    overflow-x: scroll;
+    scrollbar-width: none;
+    width: 100%;
+  }
+
+  .FirstStep{
+    width: 100%;
+  }
+  .boxsteptext{
+    width: 60%;
   }
 }
 
@@ -1229,10 +1309,7 @@
     gap: 20px;
   }
 
-  .primary-button {
-    padding: 8px 16px;
-    font-size: 14px;
-  }
+
   .hero-content h3{
     font-size: 32px;
   }
@@ -1244,8 +1321,31 @@
   }
 
   .stat-item p{
-    font-size: 16px;
-    
+    font-size: 16px;  
+  }
+
+  .boxcenterfooterinfo{
+    width: 100%;
+    justify-content: end;
+    gap: 24px;
+  }
+
+  .menu-item {
+    display: none;
+  }
+
+  .concept-content, .featured-product{
+    width: 100%;
+    gap: unset;
+  }
+}
+
+@media screen and (max-width:900px) {
+  .bim-not-only .container .content-columns{
+    flex-direction: column;
+  }
+  .bim-brand .container .content-columns{
+    flex-direction: column-reverse;
   }
 }
 
@@ -1260,6 +1360,27 @@
     display: flex;
     flex-direction: column;
   }
+  .boxrowpartners{
+    flex-direction: column-reverse;
+  }
+  .boxpartnersrowcolumn {
+    /* justify-content: center; */
+    align-items: center;
+  }
+
+  .FirstStep img{
+    display: none;
+  }
+
+  .boxsteptext{
+    width: 100%;
+  }
+
+  .boxcenterfooterinfo{
+    flex-direction: column;
+    align-items: start;
+    width: unset;
+  }
 }
 
 /* Адаптация для мобильных устройств */
@@ -1270,14 +1391,24 @@
     gap: 20px;
   }
 
-  .primary-button {
-    width: 100%;
-    padding: 12px;
-    font-size: 16px;
-  }
 
   .hero {
     padding: 300px 0px;
+  }
+
+  .boxcontactscontainerrow{
+    flex-direction: column;
+    row-gap: 44px;
+  }
+  .boxemail{
+    width: 448px;
+  }
+}
+
+@media screen and (max-width:700px) {
+  .model-row{
+    flex-direction: column;
+    row-gap: 18px;
   }
 }
 
@@ -1325,8 +1456,70 @@
     height: 42px;
   }
 
-  .hero .container {
+  .container, .container-Column {
     padding: 0px 11px;
+  }
+
+  .slider-button{
+    display: none;
+  }
+
+  .slider-button-adaptive-box{
+    display: flex;
+  }
+
+  .slider-title{
+    font-size: 28px;
+  }
+  .slider-subtitle{
+    font-size: 20px;
+  }
+  .business-model-container h2, .map-cta h2, .international h2, .franchises h2, .partnership h2, .steps h2{
+    font-size: 28px;
+  }
+  
+  .map-cta p, .boxonefranchises p, .steps h4{
+    font-size: 20px;
+  }
+  .boxcolh1 p, .boxpartnersrowcolumn p{
+    font-size: 16px;
+  }
+  .boxFooterLogo{
+    position: unset;
+  }
+  .boxcenterfooterinfo {
+    align-items: center;
+  }
+  .boxfooterinfocolumns{
+    align-items: center;
+  }
+
+
+}
+
+
+
+@media screen and (max-width:550px) {
+  .support-item{
+    width: 100%;
+  }
+  .boxemail{
+    width: 100%;
+  }
+  .boxemail h2{
+    font-size: 24px;
+  }
+  .boxemail h6{
+    font-size: 16px;
+  }
+  .boxrowallrights{
+    flex-direction: column;
+  }
+  .featured-product button{
+    display: none;
+  }
+  .boxbtnsConcept{
+    display: flex;
   }
 }
 
